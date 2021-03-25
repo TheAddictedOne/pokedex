@@ -19,25 +19,29 @@ class Pokemons extends Component {
       localStorage.setItem(name, true)
       currentTarget.classList.add('caught')
     }
+    this.forceUpdate()
   }
 
   render() {
     return (
-      <div className="Pokedex">
-        {this.props.pokemons.map(
-          (pokemon, key) => {
-            const numInBox = key % 30
-            let cssclasses = 'Pokemon'
-            cssclasses += (numInBox >= 24 && numInBox < 30) ? ' margin-bottom' : ''
-            cssclasses += localStorage.getItem(pokemon.name) ? ' caught' : ''
-            return (
-              <div key={key} className={cssclasses} onClick={this.toggle} data-name={pokemon.name}>
-                <img src={pokemon.src} />
-              </div>
-            )
-          }
-        )}
-      </div>
+      <>
+        <h2 className="Count">{localStorage.length}/{this.props.pokemons.length}</h2>
+        <div className="Pokedex">
+          {this.props.pokemons.map(
+            (pokemon, key) => {
+              const numInBox = key % 30
+              let cssclasses = 'Pokemon'
+              cssclasses += (numInBox >= 24 && numInBox < 30) ? ' margin-bottom' : ''
+              cssclasses += localStorage.getItem(pokemon.name) ? ' caught' : ''
+              return (
+                <div key={key} className={cssclasses} onClick={this.toggle} data-name={pokemon.name}>
+                  <img src={pokemon.src} />
+                </div>
+              )
+            }
+          )}
+        </div>
+      </>
     )
   }
 }
