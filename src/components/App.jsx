@@ -1,6 +1,6 @@
 import 'src/index.scss'
-
 import { Component } from 'react'
+import Pokemons from 'src/components/Pokemons.jsx'
 
 class App extends Component {
   constructor(props) {
@@ -16,17 +16,6 @@ class App extends Component {
       })
   }
 
-  renderPokemons() {
-    return this.state.pokemons.map((pokemon, key) => {
-      return (
-        <li key={key}>
-          <img src={pokemon.src} />
-          <span>{pokemon.name}</span>
-        </li>
-      )
-    })
-  }
-
   render() {
     if (!this.state.pokemons.length) return null
 
@@ -35,9 +24,7 @@ class App extends Component {
         <header className="Header">
           <h1>Pokedex! (v1.0.0)</h1>
         </header>
-        <ul>
-          {this.renderPokemons()}
-        </ul>
+        <Pokemons pokemons={this.state.pokemons} />
       </>
     )
   }
