@@ -20,31 +20,19 @@ class Pokemons extends Component {
 
   render() {
     return (
-      <table className={this.props.mode ? 'only-caught' : ''}>
-        <thead>
-          <tr>
-            <th>N°</th>
-            <th>Image</th>
-            <th>Nom</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.props.pokemons.map(
-            (pokemon, key) => {
-              key++;
-              const className = this.setClassName(key)
-              return (
-                <tr key={key} onClick={this.toggle} data-key={key} className={className}>
-                  <td>{key}</td>
-                  <td><img src={pokemon.src} /></td>
-                  <td>{pokemon.name}</td>
-
-                </tr>
-              )
-            }
-          )}
-        </tbody>
-      </table>
+      <div className="Pokedex">
+        {this.props.pokemons.map(
+          (pokemon, key) => {
+            const numInBox = key % 30
+            const className = (numInBox >= 24 && numInBox < 30) ? 'Pokemon margin-bottom' : 'Pokemon'
+            return (
+              <div key={key} className={className} onClick={this.toggle}>
+                <img src={pokemon.src} />
+              </div>
+            )
+          }
+        )}
+      </div>
     )
   }
 }

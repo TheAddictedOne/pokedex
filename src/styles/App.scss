@@ -10,17 +10,23 @@
   margin: 10px;
 }
 
-.caught {
-  display: none;
+.Pokedex {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
 }
 
-.only-caught {
-  tbody {
-    tr {
-      display: none;
-    }
+.Pokemon {
+  border: 1px solid black;
+  flex-basis: 15%;
+  margin: .4%;
+
+  &.margin-bottom {
+    margin-bottom: 50px;
   }
-  & .caught {
-    display: table-row;
+
+  & img {
+    width: 100%;
   }
 }

@@ -14,18 +14,6 @@ class App extends Component {
       .then((pokemons) => {
         this.setState({ pokemons })
       })
-
-    this.onModeChanged = this.onModeChanged.bind(this)
-    this.reset = this.reset.bind(this)
-  }
-
-  reset() {
-    localStorage.clear()
-    this.forceUpdate()
-  }
-
-  onModeChanged(event) {
-    this.setState({ mode: event.target.checked })
   }
 
   render() {
@@ -35,12 +23,9 @@ class App extends Component {
       <>
         <header className="Header">
           <h1>Pokedex! (v1.0.0)</h1>
-          <input id="Mode" type="checkbox" onChange={this.onModeChanged} />
-          <label htmlFor="Mode">Mode</label>
-          <button onClick={this.reset}>Reset</button>
         </header>
         <main>
-          <Pokemons pokemons={this.state.pokemons} mode={this.state.mode} />
+          <Pokemons pokemons={this.state.pokemons} />
         </main>
       </>
     )
