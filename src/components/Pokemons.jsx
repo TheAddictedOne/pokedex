@@ -5,17 +5,20 @@ class Pokemons extends Component {
     super(props)
 
     this.toggle = this.toggle.bind(this)
-    this.setClassName = this.setClassName.bind(this)
   }
 
-  toggle(event) {
-    console.log(localStorage.length)
-    localStorage.setItem(event.currentTarget.dataset.key, true)
-    event.currentTarget.classList.toggle('caught')
-  }
+  toggle({ currentTarget }) {
+    const name = currentTarget.dataset.name
+    const isCaught = localStorage.getItem(name)
 
-  setClassName(key) {
-    return localStorage.getItem(key) ? 'caught': ''
+    if (isCaught) {
+      localStorage.removeItem(name)
+      currentTarget.classList.remove('caught')
+    }
+    else {
+      localStorage.setItem(name, true)
+      currentTarget.classList.add('caught')
+    }
   }
 
   render() {
@@ -24,9 +27,11 @@ class Pokemons extends Component {
         {this.props.pokemons.map(
           (pokemon, key) => {
             const numInBox = key % 30
-            const className = (numInBox >= 24 && numInBox < 30) ? 'Pokemon margin-bottom' : 'Pokemon'
+            let cssclasses = 'Pokemon'
+            cssclasses += (numInBox >= 24 && numInBox < 30) ? ' margin-bottom' : ''
+            cssclasses += localStorage.getItem(pokemon.name) ? ' caught' : ''
             return (
-              <div key={key} className={className} onClick={this.toggle}>
+              <div key={key} className={cssclasses} onClick={this.toggle} data-name={pokemon.name}>
                 <img src={pokemon.src} />
               </div>
             )
