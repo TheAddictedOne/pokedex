@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <>
         <header className="Header">
-          <h1>Pokedex! (v1.0.0)</h1>
+          <h1>Pokedex! (v1.1.0)</h1>
         </header>
         <main>
           <Pokemons pokemons={this.state.pokemons} />
