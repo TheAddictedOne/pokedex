@@ -10,17 +10,17 @@
   margin: 10px;
 }
 
-.Search {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
-  width: 80%;
+.caught {
+  display: none;
+}
 
-  & > input {
-    height: 50px;
-    width: 100%;
-    font-size: 20px;
-    padding: 0 10px;
+.only-caught {
+  tbody {
+    tr {
+      display: none;
+    }
+  }
+  & .caught {
+    display: table-row;
   }
 }

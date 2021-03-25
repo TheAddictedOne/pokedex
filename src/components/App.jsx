@@ -14,6 +14,12 @@ class App extends Component {
       .then((pokemons) => {
         this.setState({ pokemons })
       })
+
+    this.onModeChanged = this.onModeChanged.bind(this)
+  }
+
+  onModeChanged(event) {
+    this.setState({ mode: event.target.checked })
   }
 
   render() {
@@ -23,8 +29,12 @@ class App extends Component {
       <>
         <header className="Header">
           <h1>Pokedex! (v1.0.0)</h1>
+          <input id="Mode" type="checkbox" onChange={this.onModeChanged} />
+          <label htmlFor="Mode">Mode</label>
         </header>
-        <Pokemons pokemons={this.state.pokemons} />
+        <main>
+          <Pokemons pokemons={this.state.pokemons} mode={this.state.mode} />
+        </main>
       </>
     )
   }
