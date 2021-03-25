@@ -16,6 +16,12 @@ class App extends Component {
       })
 
     this.onModeChanged = this.onModeChanged.bind(this)
+    this.reset = this.reset.bind(this)
+  }
+
+  reset() {
+    localStorage.clear()
+    this.forceUpdate()
   }
 
   onModeChanged(event) {
@@ -31,6 +37,7 @@ class App extends Component {
           <h1>Pokedex! (v1.0.0)</h1>
           <input id="Mode" type="checkbox" onChange={this.onModeChanged} />
           <label htmlFor="Mode">Mode</label>
+          <button onClick={this.reset}>Reset</button>
         </header>
         <main>
           <Pokemons pokemons={this.state.pokemons} mode={this.state.mode} />
