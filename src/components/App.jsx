@@ -34,8 +34,8 @@ class App extends Component {
         <main>
           {boxes.map((pokemons, key) => <Box key={key} num={key + 1} pokemons={pokemons} />)}
         </main>
-        <footer>
-          <div className="Count">{localStorage.length}/{max}</div>
+        <footer className="Footer">
+          <div>{localStorage.length}/{max}</div>
         </footer>
       </div>
     )
