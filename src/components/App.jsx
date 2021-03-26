@@ -29,7 +29,7 @@ class App extends Component {
     return (
       <div className="App" onClick={this.refreshCounter}>
         <header className="Header">
-          <h1>Pokedex! (v1.1.0)</h1>
+          <h1>Pokedex! (v1.2.0)</h1>
         </header>
         <main>
           {boxes.map((pokemons, key) => <Box key={key} num={key + 1} pokemons={pokemons} />)}
