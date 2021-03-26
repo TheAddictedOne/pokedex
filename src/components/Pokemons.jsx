@@ -19,13 +19,11 @@ class Pokemons extends Component {
       localStorage.setItem(name, true)
       currentTarget.classList.add('caught')
     }
-    this.forceUpdate()
   }
 
   render() {
     return (
-      <>
-        <h2 className="Count">{localStorage.length}/{this.props.pokemons.length}</h2>
+      <>    
         <div className="Pokedex">
           {this.props.pokemons.map(
             (pokemon, key) => {
