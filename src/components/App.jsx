@@ -1,11 +1,8 @@
-import 'src/index.scss'
 import { Component } from 'react'
 import Box from 'src/components/Box.jsx'
 import Navigation from 'src/components/Navigation.jsx'
 import Pokemons from 'src/components/Pokemons.jsx'
-
-const URL_GALAR = './data/pokemons.json'
-const URL_ISOLARMURE = './data/galar-isolarmure.json'
+import { getBoxes } from 'src/utils.js'
 
 class App extends Component {
   constructor(props) {
@@ -16,17 +13,17 @@ class App extends Component {
 
     this.state = {
       currentTab: null,
-      boxes: []
+      boxes: [],
+      max: '-'
     }
-
-    getBoxes(URL_GALAR).then(({ boxes, max }) => {
-      this.setState({ boxes, max })
-    })
   }
 
   selectTab(event) {
-    console.log(event)
-    this.setState({ currentTab: event.target.dataset.tab })
+    const { tab: currentTab, src } = event.target.dataset
+    this.setState({ boxes: [] })
+    getBoxes(src).then(({ boxes, max }) => {
+      this.setState({ boxes, max, currentTab })
+    })
   }
 
   refreshCounter() {
@@ -35,7 +32,6 @@ class App extends Component {
 
   render() {
     const { currentTab, boxes, max } = this.state
-    if (!boxes.length) return null
 
     return (
       <div className="App" onClick={this.refreshCounter}>
@@ -52,24 +48,6 @@ class App extends Component {
       </div>
     )
   }
-}
-
-function getBoxes(url) {
-  return fetch(url)
-    .then((response) => response.json())
-    .then((pokemons) => {
-      const POKEMONS_PER_BOX = 30
-      const boxes = []
-      let box
-      pokemons.forEach((pokemon, i) => {
-        if (i % 30 === 0) {
-          box = []
-          boxes.push(box)
-        }
-        box.push(pokemon)
-      })
-      return { boxes, max: pokemons.length }
-    })
 }
 
 export default App
