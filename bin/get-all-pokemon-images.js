@@ -9,10 +9,18 @@ fs.promises.readFile(SRC_FILE).then((json) => {
   const names = JSON.parse(json)
 
   names.forEach((name, i) => {
+    if (i < 800 || i > 900) return
+
     const n = String(i+1).padStart(3, "0")
     const file = fs.createWriteStream(path.resolve(__dirname, `../images/${name}.png`));
-    const request = https.get(`${SRC}${n}.png`, function(response) {
+    const source = `${SRC}${n}.png`
+    console.log(n, source)
+    const request = https.get(source, function(response) {
       response.pipe(file);
+
+      response.on('error', function(e) {
+        console.log(e)
+      })
     });
   })
 })
