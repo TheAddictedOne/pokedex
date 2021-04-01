@@ -40,6 +40,7 @@
     align-items: center;
     cursor: pointer;
     position: relative;
+    box-shadow: 0 5px 10px -10px var(--color-red);
 
     & > div {
       box-sizing: border-box;
@@ -76,6 +77,23 @@
   }
 }
 
+/*
+ * Footer
+ */
+.Footer {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 -5px 10px -10px black;
+  background: white;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  text-align: right;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
 .Box {
   display: flex;
   flex-wrap: wrap;
@@ -110,16 +128,4 @@
 
 .hidden {
   display: none;
-}
-
-.Footer {
-  box-shadow: 0 0 5px black;
-  border-top: 1px solid black;
-  background: white;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  text-align: right;
-  width: 100%;
-  padding: 10px;
 }
