@@ -58,7 +58,7 @@ class App extends Component {
           {boxes.map((pokemons, key) => <Box key={key} num={key + 1} pokemons={pokemons} />)}
         </main>
         <footer className="Footer">
-          <div>Version 1.2.0</div>
+          <div>Version 1.3.0</div>
           <div>{pokemonCaught}/{max}</div>
         </footer>
       </div>
