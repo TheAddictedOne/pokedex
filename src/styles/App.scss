@@ -10,6 +10,7 @@
   font-size: 18px;
   align-self: flex-start;
   margin: 10px 0 50px 10px;
+  width: 100%;
 }
 
 .Box {
@@ -58,4 +59,25 @@
   text-align: right;
   width: 100%;
   padding: 10px;
+}
+
+.Navigation {
+  display: flex;
+  height: 60px;
+  width: 100%;
+  align-items: center;
+  cursor: pointer;
+
+  & div {
+    box-sizing: border-box;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    &.selected {
+      border-bottom: 3px solid black;
+    }
+  }
 }

@@ -1,6 +1,7 @@
 import 'src/index.scss'
 import { Component } from 'react'
 import Box from 'src/components/Box.jsx'
+import Navigation from 'src/components/Navigation.jsx'
 import Pokemons from 'src/components/Pokemons.jsx'
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
       <div className="App" onClick={this.refreshCounter}>
         <header className="Header">
           <h1>Pokedex! (v1.2.0)</h1>
+          <Navigation />
         </header>
         <main>
           {boxes.map((pokemons, key) => <Box key={key} num={key + 1} pokemons={pokemons} />)}
