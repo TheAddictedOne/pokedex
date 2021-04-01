@@ -104,6 +104,7 @@
     margin: 0 0 20px 20px;
     padding: 10px;
     border-bottom: 1px solid black;
+    cursor: pointer;
   }
 
   &.hidden {
@@ -130,6 +131,7 @@
   margin: .4%;
 
   & img {
+    display: block;
     width: 100%;
   }
 

@@ -5,29 +5,30 @@ class Pokemon extends Component {
     super(props)
 
     this.toggle = this.toggle.bind(this)
+
+    this.state = {
+      isCaught: localStorage.getItem(props.name) ? true : false
+    }
   }
 
   toggle({ currentTarget }) {
-    const name = currentTarget.dataset.name
-    const isCaught = localStorage.getItem(name)
-
-    if (isCaught) {
-      localStorage.removeItem(name)
-      currentTarget.classList.remove('caught')
+    if (this.state.isCaught) {
+      localStorage.removeItem(this.props.name)
+      this.setState({ isCaught: false })
     }
     else {
-      localStorage.setItem(name, true)
-      currentTarget.classList.add('caught')
+      localStorage.setItem(this.props.name, true)
+      this.setState({ isCaught: true })
     }
   }
 
   render() {
     let cssclasses = 'Pokemon'
-    cssclasses += localStorage.getItem(name) ? ' caught' : ''
+    cssclasses += localStorage.getItem(this.props.name) ? ' caught' : ''
 
     return (
-      <div className={cssclasses} onClick={this.toggle} data-name={this.props.pokemon}>
-        <img src={`./images/${this.props.pokemon}.png`} />
+      <div className={cssclasses} onClick={this.toggle}>
+        <img src={`./images/${this.props.name}.png`} />
       </div>
     )
   }
