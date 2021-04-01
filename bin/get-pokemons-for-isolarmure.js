@@ -7,7 +7,7 @@ const DEST = path.resolve(__dirname, '../data/galar-isolarmure.json')
 const URL = 'https://www.jeuxvideo.com/wikis-soluce-astuces/1247746/liste-des-211-pokemon-du-dlc-isolarmure.htm'
 
 request({ method: 'GET', url: URL }, (err, res, body) => {
-  const pokemons = []
+  const names = []
   const doc = (new JSDOM(body)).window.document
 
   const table = doc.querySelector('table')
@@ -16,13 +16,10 @@ request({ method: 'GET', url: URL }, (err, res, body) => {
 
   rows.forEach((row, i) => {
     const columns = row.querySelectorAll('td')
-    const src = columns[3].querySelector('img').src
-    const name = columns[2].textContent
-    const pokemon = { src, name }
-    pokemons.push(pokemon)
+    names.push(columns[2].textContent)
   })
 
-  fsp.writeFile(DEST, JSON.stringify(pokemons))
+  fsp.writeFile(DEST, JSON.stringify(names))
     .then(() => console.log('Succeed!'))
     .catch((e) => console.log('Failed :(', e))
 })
