@@ -97,11 +97,23 @@
 .Box {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   width: 100%;
 
   & h1 {
     margin: 0 0 20px 20px;
+    padding: 10px;
+    border-bottom: 1px solid black;
+  }
+
+  &.hidden {
+    & .Pokemons {
+      display: none;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 100px;
   }
 }
 
@@ -117,15 +129,15 @@
   flex-basis: 15%;
   margin: .4%;
 
-  &.caught img {
-    opacity: .2;
-  }
-
   & img {
     width: 100%;
   }
-}
 
-.hidden {
-  display: none;
+  &.caught {
+    border: none;
+
+    & img {
+      opacity: .2;
+    }
+  }
 }

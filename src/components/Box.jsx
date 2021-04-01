@@ -10,8 +10,7 @@ class Box extends Component {
 
   toggle(event) {
     if (event.target.tagName !== 'H1') return
-    const pokemons = event.currentTarget.querySelector('.Pokemons')
-    pokemons.classList.toggle('hidden')
+    event.currentTarget.classList.toggle('hidden')
   }
 
   render() {
