@@ -1,7 +1,6 @@
 import { Component } from 'react'
 import Box from 'src/components/Box.jsx'
 import Navigation from 'src/components/Navigation.jsx'
-import Pokemons from 'src/components/Pokemons.jsx'
 import { getBoxes } from 'src/utils.js'
 
 class App extends Component {

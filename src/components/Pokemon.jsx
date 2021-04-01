@@ -22,13 +22,12 @@ class Pokemon extends Component {
   }
 
   render() {
-    let { name, src } = this.props
     let cssclasses = 'Pokemon'
     cssclasses += localStorage.getItem(name) ? ' caught' : ''
 
     return (
-      <div className={cssclasses} onClick={this.toggle} data-name={name}>
-        <img src={src} />
+      <div className={cssclasses} onClick={this.toggle} data-name={this.props.pokemon}>
+        <img src={`./images/${this.props.pokemon}.png`} />
       </div>
     )
   }

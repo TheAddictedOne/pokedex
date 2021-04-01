@@ -30,7 +30,8 @@ module.exports = {
     new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src', 'index.html') }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: path.resolve(__dirname, 'data'), to: path.resolve(__dirname, 'docs', 'data') }
+        { from: path.resolve(__dirname, 'data'), to: path.resolve(__dirname, 'docs', 'data') },
+        { from: path.resolve(__dirname, 'images'), to: path.resolve(__dirname, 'docs', 'images') }
       ]
     })
   ],

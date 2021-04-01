@@ -20,7 +20,7 @@ class Box extends Component {
       <section className="Box" onClick={this.toggle}>
         <h1>Boîte n°{num}</h1>
         <div className="Pokemons">
-          {pokemons.map((pokemon, key) => <Pokemon key={key} {...pokemon} />)}
+          {pokemons.map((pokemon, key) => <Pokemon key={key} pokemon={pokemon} />)}
         </div>
       </section>
     )
