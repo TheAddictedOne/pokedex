@@ -1,6 +1,12 @@
 :root {
+  --color-red: #fe1c1c;
+
   font-family: sans-serif;
   font-size: 22px;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {

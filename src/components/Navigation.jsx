@@ -9,10 +9,11 @@ const URL_ISOLARMURE = './data/galar-isolarmure.json'
 
 export default function({ onClick, currentTab }) {
   return (
-    <nav className="Navigation" onClick={onClick}>
+    <nav onClick={onClick}>
       <Tab currentTab={currentTab} tab={TAB_GALAR} src={URL_GALAR} />
       <Tab currentTab={currentTab} tab={TAB_ISOLARMURE} src={URL_ISOLARMURE} />
       <Tab currentTab={currentTab} tab={TAB_COURONNEIGE} />
+      <span className="current"></span>
     </nav>
   )
 }
