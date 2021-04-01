@@ -4,19 +4,29 @@ import Box from 'src/components/Box.jsx'
 import Navigation from 'src/components/Navigation.jsx'
 import Pokemons from 'src/components/Pokemons.jsx'
 
+const URL_GALAR = './data/pokemons.json'
+const URL_ISOLARMURE = './data/galar-isolarmure.json'
+
 class App extends Component {
   constructor(props) {
     super(props)
 
+    this.selectTab = this.selectTab.bind(this)
     this.refreshCounter = this.refreshCounter.bind(this)
 
     this.state = {
+      currentTab: null,
       boxes: []
     }
 
-    getBoxes().then(({ boxes, max }) => {
+    getBoxes(URL_GALAR).then(({ boxes, max }) => {
       this.setState({ boxes, max })
     })
+  }
+
+  selectTab(event) {
+    console.log(event)
+    this.setState({ currentTab: event.target.dataset.tab })
   }
 
   refreshCounter() {
@@ -24,14 +34,14 @@ class App extends Component {
   }
 
   render() {
-    const { boxes, max } = this.state
+    const { currentTab, boxes, max } = this.state
     if (!boxes.length) return null
 
     return (
       <div className="App" onClick={this.refreshCounter}>
         <header className="Header">
           <h1>Pokedex! (v1.2.0)</h1>
-          <Navigation />
+          <Navigation onClick={this.selectTab} currentTab={currentTab} />
         </header>
         <main>
           {boxes.map((pokemons, key) => <Box key={key} num={key + 1} pokemons={pokemons} />)}
@@ -44,8 +54,8 @@ class App extends Component {
   }
 }
 
-function getBoxes() {
-  return fetch('./data/pokemons.json')
+function getBoxes(url) {
+  return fetch(url)
     .then((response) => response.json())
     .then((pokemons) => {
       const POKEMONS_PER_BOX = 30
