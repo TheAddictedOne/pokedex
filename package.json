@@ -28,7 +28,8 @@
     "start": "webpack serve --mode development",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "pokemons": "node ./bin/get-pokemons-from-pokebip.js"
+    "pokemons": "node ./bin/get-pokemons-from-pokebip.js",
+    "fetch-isolarmure-pokemons": "node ./bin/get-pokemons-for-isolarmure.js"
   },
   "babel": {
     "presets": [
