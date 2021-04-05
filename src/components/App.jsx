@@ -49,7 +49,7 @@ class App extends Component {
       <div className="App">
         <header className="Header">
           <div className="title">
-            <img src="./images/pokeball.png" />
+            <img src="./images/Pokeball.png" />
             <h1>Pokedex!</h1>
           </div>
           <Navigation onClick={this.selectTab} currentTab={currentTab} />
