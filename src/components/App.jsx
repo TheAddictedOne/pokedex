@@ -3,7 +3,7 @@ import Box from 'src/components/Box.jsx'
 import Navigation from 'src/components/Navigation.jsx'
 import { getBoxes } from 'src/utils.js'
 
-class App extends Component {
+export default class extends Component {
   constructor(props) {
     super(props)
 
@@ -65,5 +65,3 @@ class App extends Component {
     )
   }
 }
-
-export default App

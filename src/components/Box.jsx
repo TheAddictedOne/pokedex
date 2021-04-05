@@ -1,7 +1,7 @@
 import { Component } from 'react'
-import Pokemon from 'src/components/Pokemon.jsx'
+import Item from 'src/components/Item.jsx'
 
-class Box extends Component {
+export default class extends Component {
   constructor(props) {
     super(props)
 
@@ -44,11 +44,9 @@ class Box extends Component {
       <section className="Box hidden" onClick={this.toggle}>
         <h1>Boîte n°{num} ({current}/30)</h1>
         <div className="Pokemons">
-          {pokemons.map((name, key) => <Pokemon key={key} name={name} />)}
+          {pokemons.map((name, key) => <Item key={key} name={name} />)}
         </div>
       </section>
     )
   }
 }
-
-export default Box
