@@ -10,12 +10,14 @@ export default class extends Component {
     this.selectTab = this.selectTab.bind(this)
     this.count = this.count.bind(this)
     this.recount = this.recount.bind(this)
+    this.displayOnlyMissing = this.displayOnlyMissing.bind(this)
 
     this.state = {
       currentTab: null,
       boxes: [],
       pokemonCaught: '-',
       max: '-',
+      onlyMissing: false,
     }
   }
 
@@ -42,8 +44,13 @@ export default class extends Component {
     this.setState({ pokemonCaught: this.count(this.state.boxes) })
   }
 
+  displayOnlyMissing() {
+    this.setState({ onlyMissing: !this.state.onlyMissing })
+  }
+
   render() {
-    const { currentTab, boxes, pokemonCaught, max } = this.state
+    const { currentTab, boxes, pokemonCaught, max, onlyMissing } = this.state
+    const classes = onlyMissing ? 'only-missing' : ''
 
     return (
       <div className="App">
@@ -52,9 +59,11 @@ export default class extends Component {
             <img src="./images/Pokeball.png" />
             <h1>Pokedex!</h1>
           </div>
+          <input id="OnlyMissing" type="checkbox" onClick={this.displayOnlyMissing} />
+          <label for="OnlyMissing">Display only missing</label>
           <Navigation onClick={this.selectTab} currentTab={currentTab} />
         </header>
-        <main onClick={this.recount}>
+        <main onClick={this.recount} className={classes}>
           {boxes.map((pokemons, key) => <Box key={key} num={key + 1} pokemons={pokemons} />)}
         </main>
         <footer className="Footer">

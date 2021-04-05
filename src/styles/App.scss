@@ -9,6 +9,10 @@
  * Header
  */
 .Header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background: white;
   align-self: flex-start;
   margin: 0 0 50px 0;
   padding: 10px;
@@ -113,6 +117,10 @@
     }
   }
 
+  &:first-child {
+    margin-top: 150px;
+  }
+
   &:last-child {
     margin-bottom: 100px;
   }
@@ -142,4 +150,8 @@
       opacity: .2;
     }
   }
+}
+
+.only-missing .caught {
+  display: none;
 }

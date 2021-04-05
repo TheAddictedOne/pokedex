@@ -41,7 +41,7 @@ export default class extends Component {
     const { num, pokemons } = this.props
     const { current } = this.state
     return (
-      <section className="Box hidden" onClick={this.toggle}>
+      <section className="Box" onClick={this.toggle}>
         <h1>Boîte n°{num} ({current}/30)</h1>
         <div className="Pokemons">
           {pokemons.map((name, key) => <Item key={key} name={name} />)}
