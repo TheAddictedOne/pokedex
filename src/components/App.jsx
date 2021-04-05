@@ -67,7 +67,7 @@ export default class extends Component {
           {boxes.map((pokemons, key) => <Box key={key} num={key + 1} pokemons={pokemons} />)}
         </main>
         <footer className="Footer">
-          <div>Version 1.4.0</div>
+          <div>Version 1.5.0</div>
           <div>{pokemonCaught}/{max}</div>
         </footer>
       </div>
