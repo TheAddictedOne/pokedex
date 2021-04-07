@@ -1,11 +1,79 @@
 .Pokedex {
-  background-color: var(--color-red);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  & > header, & > footer {
+    position: absolute;
+    background-color: var(--color-red);
+    width: 100vw;
+    height: 50vh;
+    overflow: hidden;
+    transition: transform 1s ease;
+  }
+
+  & > header {
+    top: 0;
+
+    &.opened {
+      transform: translateY(-50vh);
+    }
+  }
+
+  & > main {
+  }
+
+  & > footer {
+    bottom: 0;
+
+    &.opened {
+      transform: translateY(50vh);
+    }
+  }
 }
+
+.Corner {
+  position: absolute;
+  top: calc(var(--size-corner) / -2);
+  left: calc(var(--size-corner) / -2);
+  width: var(--size-corner);
+  height: var(--size-corner);
+  border-radius: 50%;
+  border: 10px solid var(--color-black);
+
+  &.large {
+    top: calc(var(--size-corner) / -1);
+    left: calc(var(--size-corner) / -1);
+    width: calc(var(--size-corner) * 2);
+    height: calc(var(--size-corner) * 2);
+  }
+}
+
+.Circle {
+  position: absolute;
+  left: calc(50% - var(--size-circle) / 2);
+  width: var(--size-circle);
+  height: var(--size-circle);
+  background-color: white;
+  border-radius: 50%;
+  border: 30px solid var(--color-black);
+
+  &.bottom {
+    bottom: calc(var(--size-circle) / -2);
+  }
+
+  &.top {
+    top: calc(var(--size-circle) / -2);
+  }
+}
+
+
+
+
+
+
 /*
  * Header
  */

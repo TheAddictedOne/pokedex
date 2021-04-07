@@ -19,7 +19,12 @@ export default class extends Component {
       pokemonCaught: '-',
       max: '-',
       onlyMissing: false,
+      opened: false,
     }
+
+    setTimeout(() => {
+      this.setState({ opened: true })
+    }, 2000)
   }
 
   selectTab(event) {
@@ -50,21 +55,33 @@ export default class extends Component {
   }
 
   render() {
-    const { currentTab, boxes, pokemonCaught, max, onlyMissing } = this.state
+    const { currentTab, boxes, pokemonCaught, max, onlyMissing, opened } = this.state
+    const classes = opened ? 'opened' : ''
 
     return (
       <div className="Pokedex">
-        <header className="Header">
-          <div className="title">
-            <img src="./images/Pokeball.png" />
-            <h1>Pokedex!</h1>
+        <header className={classes}>
+          <div className="anchor top-left">
+            <div className="Corner"></div>
+            <div className="Corner large"></div>
           </div>
+          <div className="anchor top-right">
+            <div className="Corner"></div>
+            <div className="Corner large"></div>
+          </div>
+          <div className="Circle bottom"></div>
         </header>
-        <main className="Main">
-          <Regions />
-        </main>
-        <footer className="Footer">
-          <div>Version 1.5.0</div>
+        <main></main>
+        <footer className={classes}>
+          <div className="anchor bottom-left">
+            <div className="Corner"></div>
+            <div className="Corner large"></div>
+          </div>
+          <div className="anchor bottom-right">
+            <div className="Corner"></div>
+            <div className="Corner large"></div>
+          </div>
+          <div className="Circle top"></div>
         </footer>
       </div>
     )
