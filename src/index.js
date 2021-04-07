@@ -1,5 +1,5 @@
 import 'src/index.scss'
 import { render } from 'react-dom'
-import App from 'src/components/App.jsx'
+import Pokedex from 'src/components/Pokedex.jsx'
 
-render(<App />, document.getElementById('Root'))
+render(<Pokedex />, document.getElementById('Root'))

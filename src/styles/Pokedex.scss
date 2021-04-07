@@ -1,4 +1,5 @@
-.App {
+.Pokedex {
+  background-color: var(--color-red);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -82,6 +83,15 @@
 }
 
 /*
+ * Main
+ */
+.Main {
+  margin-top: 150px;
+  padding: 10px;
+  width: 100%;
+}
+
+/*
  * Footer
  */
 .Footer {
@@ -115,10 +125,6 @@
     & .Pokemons {
       display: none;
     }
-  }
-
-  &:first-child {
-    margin-top: 150px;
   }
 
   &:last-child {

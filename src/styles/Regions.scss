@@ -1,0 +1,21 @@
+.Regions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Region {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 75px / 100%;
+  border: 1px solid rgba(0, 0, 0, .25);
+  font-size: 20px;
+  width: 100%;
+
+  & > h1 {
+    font-size: 24px;
+  }
+}

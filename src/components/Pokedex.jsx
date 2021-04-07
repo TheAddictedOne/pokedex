@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import Box from 'src/components/Box.jsx'
 import Navigation from 'src/components/Navigation.jsx'
+import Regions from 'src/components/Regions.jsx'
 import { getBoxes } from 'src/utils.js'
 
 export default class extends Component {
@@ -50,25 +51,20 @@ export default class extends Component {
 
   render() {
     const { currentTab, boxes, pokemonCaught, max, onlyMissing } = this.state
-    const classes = onlyMissing ? 'only-missing' : ''
 
     return (
-      <div className="App">
+      <div className="Pokedex">
         <header className="Header">
           <div className="title">
             <img src="./images/Pokeball.png" />
             <h1>Pokedex!</h1>
           </div>
-          <input id="OnlyMissing" type="checkbox" onClick={this.displayOnlyMissing} />
-          <label for="OnlyMissing">Display only missing</label>
-          <Navigation onClick={this.selectTab} currentTab={currentTab} />
         </header>
-        <main onClick={this.recount} className={classes}>
-          {boxes.map((pokemons, key) => <Box key={key} num={key + 1} pokemons={pokemons} />)}
+        <main className="Main">
+          <Regions />
         </main>
         <footer className="Footer">
           <div>Version 1.5.0</div>
-          <div>{pokemonCaught}/{max}</div>
         </footer>
       </div>
     )
