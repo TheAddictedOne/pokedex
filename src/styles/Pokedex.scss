@@ -78,6 +78,18 @@
   bottom: calc(var(--size) / -2);
   left: calc(50% - var(--size) / 2);
 
+  &::after {
+    --size: 85%;
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .25);
+  }
+
   & > div {
     position: relative;
     width: var(--size);
