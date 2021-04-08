@@ -22,9 +22,11 @@ export default class extends Component {
       opened: false,
     }
 
-    setTimeout(() => {
-      this.setState({ opened: true })
-    }, 2000)
+    if (this.props.animate) {
+      setTimeout(() => {
+        this.setState({ opened: true })
+      }, 2000)
+    }
   }
 
   selectTab(event) {
@@ -69,6 +71,7 @@ export default class extends Component {
             <div className="Corner"></div>
             <div className="Corner large"></div>
           </div>
+          <div className="Border bottom"></div>
           <div className="Circle bottom"></div>
         </header>
         <main></main>
@@ -81,6 +84,7 @@ export default class extends Component {
             <div className="Corner"></div>
             <div className="Corner large"></div>
           </div>
+          <div className="Border top"></div>
           <div className="Circle top"></div>
         </footer>
       </div>
