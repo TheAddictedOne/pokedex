@@ -27,6 +27,17 @@
   padding: 10px;
   transform: rotate(-15deg);
 
+  &::after {
+    content: 'v2.0.0';
+    position: absolute;
+    bottom: 3px;
+    right: 7px;
+    color: var(--color);
+    font-size: 18px;
+    font-weight: bold;
+    font-family: monospace;
+  }
+
   & > div {
     --height: var(--thickness);
     position: relative;

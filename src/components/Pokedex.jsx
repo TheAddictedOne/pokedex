@@ -75,6 +75,7 @@ export default class extends Component {
             <div></div>
             <div></div>
           </div>
+          <Regions />
         </main>
         <footer>
           <div className="anchor bottom-left">
