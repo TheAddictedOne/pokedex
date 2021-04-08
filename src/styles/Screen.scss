@@ -10,36 +10,37 @@
   --width: 90vw;
   --height: calc(var(--width) * 2 / 3);
   --color: rgba(255, 255, 255, .3);
-  --thickness: 20px;
+  --thickness: 5vw;
   position: absolute;
-  bottom: 10%;
+  bottom: 5%;
+  left: 0;
   right: 0;
   width: var(--width);
   height: var(--height);
   border: var(--thickness) solid var(--color);
+  margin: 0 auto;
   border-radius: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   padding: 10px;
-  transform: rotate(-30deg);
+  transform: rotate(-15deg);
 
   & > div {
-    --margin: 30px;
     --height: var(--thickness);
     position: relative;
     width: 60%;
     height: var(--height);
     background-color: var(--color);
-    margin-left: var(--margin);
+    margin-left: calc(var(--thickness) * 2);
     border-radius: var(--thickness);
 
     &::before {
       content: '';
       position: absolute;
       top: 0;
-      left: calc(var(--margin) * -1);
+      left: calc(var(--thickness) * -2);
       width: var(--height);
       height: var(--height);
       background-color: var(--color);

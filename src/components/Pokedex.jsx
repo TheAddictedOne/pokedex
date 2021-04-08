@@ -19,13 +19,6 @@ export default class extends Component {
       pokemonCaught: '-',
       max: '-',
       onlyMissing: false,
-      opened: false,
-    }
-
-    if (this.props.animate) {
-      setTimeout(() => {
-        this.setState({ opened: true })
-      }, 500)
     }
   }
 
@@ -57,12 +50,11 @@ export default class extends Component {
   }
 
   render() {
-    const { currentTab, boxes, pokemonCaught, max, onlyMissing, opened } = this.state
-    const classes = opened ? 'opened' : ''
+    const { currentTab, boxes, pokemonCaught, max, onlyMissing } = this.state
 
     return (
       <div className="Pokedex">
-        <header className={classes}>
+        <header>
           <div className="anchor top-left">
             <div className="Corner"></div>
             <div className="Corner large"></div>
@@ -84,7 +76,7 @@ export default class extends Component {
             <div></div>
           </div>
         </main>
-        <footer className={classes}>
+        <footer>
           <div className="anchor bottom-left">
             <div className="Corner"></div>
             <div className="Corner large"></div>

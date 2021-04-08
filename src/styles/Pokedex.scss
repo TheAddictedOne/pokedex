@@ -10,7 +10,7 @@
     background-color: var(--color-red);
     width: 100vw;
     height: 50vh;
-    transition: transform 1s ease;
+
 
     &::after {
       content: '';
@@ -24,10 +24,7 @@
   & > header {
     top: 0;
     z-index: 1;
-
-    &.opened {
-      transform: translateY(-100vh);
-    }
+    animation: translate-up 1s ease 1s forwards;
 
     &::after {
       bottom: 0;
@@ -36,10 +33,7 @@
 
   & > footer {
     bottom: 0;
-
-    &.opened {
-      transform: translateY(100vh);
-    }
+    animation: translate-down 1s ease 1s forwards;
 
     &:after {
       top: 0;
@@ -139,6 +133,23 @@
     background-color: var(--color-white);
     border-radius: 50%;
     border: 20px solid var(--color-black);
+  }
+}
+
+@keyframes translate-up {
+  from {
+    transform: translateY(0vh);
+  }
+  to {
+    transform: translateY(-100vh);
+  }
+}
+@keyframes translate-down {
+  from {
+    transform: translateY(0vh);
+  }
+  to {
+    transform: translateY(100vh);
   }
 }
 
