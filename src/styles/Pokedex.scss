@@ -16,6 +16,8 @@
   & > header {
     top: 0;
     z-index: 1;
+    border-bottom: 1px solid black;
+    box-shadow: inset 0 -5px white;
 
     &.opened {
       transform: translateY(-50vh);
@@ -30,6 +32,8 @@
 
   & > footer {
     bottom: 0;
+    border-top: 1px solid black;
+    box-shadow: inset 0 5px white;
 
     &.opened {
       transform: translateY(50vh);
