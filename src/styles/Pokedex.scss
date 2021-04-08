@@ -10,12 +10,12 @@
     background-color: var(--color-red);
     width: 100vw;
     height: 50vh;
-    overflow: hidden;
     transition: transform 1s ease;
   }
 
   & > header {
     top: 0;
+    z-index: 1;
 
     &.opened {
       transform: translateY(-50vh);
@@ -54,71 +54,39 @@
   }
 }
 
-.Border {
+.Circle {
+  --size: 250px;
   position: absolute;
-  width: 100%;
-  height: 10px;
+  bottom: calc(var(--size) / -2);
+  left: calc(50% - var(--size) / 2);
+  width: var(--size);
+  height: var(--size);
   background-color: var(--color-white);
-
-  &:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background-color: var(--color-black);
-  }
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--color-black);
 
   &:before {
-    --size: 250px;
+    --size: 200px;
     content: '';
     position: absolute;
+    bottom: 25px;
     left: calc(50% - var(--size) / 2);
     width: var(--size);
     height: var(--size);
     border-radius: 50%;
-    background-color: var(--color-white);
+    background-color: var(--color-black);
   }
 
-  &.bottom {
-    bottom: 0;
-
-    &:after {
-      bottom: 0;
-    }
-
-    &:before {
-      bottom: -125px;
-    }
-  }
-
-  &.top {
-    top: 0;
-
-    &:after {
-      top: 0;
-    }
-
-    &:before {
-      top: -125px;
-    }
-  }
-}
-
-.Circle {
-  position: absolute;
-  left: calc(50% - var(--size-circle) / 2);
-  width: var(--size-circle);
-  height: var(--size-circle);
-  background-color: var(--color-lightblue);
-  border-radius: 50%;
-  border: 30px solid var(--color-black);
-
-  &.bottom {
-    bottom: calc(var(--size-circle) / -2);
-  }
-
-  &.top {
-    top: calc(var(--size-circle) / -2);
+  &:after {
+    --size: 150px;
+    content: '';
+    position: absolute;
+    bottom: 50px;
+    left: calc(50% - var(--size) / 2);
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background-color: var(--color-lightblue);
   }
 }
 

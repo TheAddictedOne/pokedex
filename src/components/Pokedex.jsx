@@ -71,8 +71,7 @@ export default class extends Component {
             <div className="Corner"></div>
             <div className="Corner large"></div>
           </div>
-          <div className="Border bottom"></div>
-          <div className="Circle bottom"></div>
+          <div className="Circle"></div>
         </header>
         <main></main>
         <footer className={classes}>
@@ -84,8 +83,6 @@ export default class extends Component {
             <div className="Corner"></div>
             <div className="Corner large"></div>
           </div>
-          <div className="Border top"></div>
-          <div className="Circle top"></div>
         </footer>
       </div>
     )
