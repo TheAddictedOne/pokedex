@@ -25,7 +25,7 @@ export default class extends Component {
     if (this.props.animate) {
       setTimeout(() => {
         this.setState({ opened: true })
-      }, 2000)
+      }, 500)
     }
   }
 
@@ -77,7 +77,13 @@ export default class extends Component {
             <div></div>
           </div>
         </header>
-        <main></main>
+        <main className="Screen">
+          <div className="List">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </main>
         <footer className={classes}>
           <div className="anchor bottom-left">
             <div className="Corner"></div>

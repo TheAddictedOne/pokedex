@@ -34,12 +34,6 @@
     }
   }
 
-  & > main {
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--color-lightblue);
-  }
-
   & > footer {
     bottom: 0;
 
@@ -146,113 +140,6 @@
     border-radius: 50%;
     border: 20px solid var(--color-black);
   }
-}
-
-
-
-
-
-
-/*
- * Header
- */
-.Header {
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  background: white;
-  align-self: flex-start;
-  margin: 0 0 50px 0;
-  padding: 10px;
-  width: 100%;
-
-  & > .title {
-    --height: 40px;
-
-    display: flex;
-    height: var(--height);
-    align-items: center;
-
-    & > img {
-      width: var(--height);
-      height: var(--height);
-      margin-right: 10px;
-    }
-
-    & > h1 {
-      font-size: 20px;
-    }
-  }
-
-  & > nav {
-    font-size: 16px;
-    display: flex;
-    height: 60px;
-    width: 100%;
-    align-items: center;
-    cursor: pointer;
-    position: relative;
-    box-shadow: 0 5px 10px -10px var(--color-red);
-
-    & > div {
-      box-sizing: border-box;
-      display: flex;
-      flex: 1;
-      height: 100%;
-      justify-content: center;
-      align-items: center;
-
-      &.selected {
-        color: var(--color-red);
-        font-weight: bold;
-      }
-
-      &.selected:nth-child(1) ~ .current {
-        transform: translateX(0);
-      }
-      &.selected:nth-child(2) ~ .current {
-        transform: translateX(100%);
-      }
-      &.selected:nth-child(3) ~ .current {
-        transform: translateX(200%);
-      }
-    }
-
-    & > .current {
-      position: absolute;
-      bottom: 0;
-      width: calc(100%/3);
-      height: 2px;
-      background: var(--color-red);
-      transition: transform .5s ease;
-    }
-  }
-}
-
-/*
- * Main
- */
-.Main {
-  margin-top: 150px;
-  padding: 10px;
-  width: 100%;
-}
-
-/*
- * Footer
- */
-.Footer {
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0 -5px 10px -10px black;
-  background: white;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  text-align: right;
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
 }
 
 .Box {
