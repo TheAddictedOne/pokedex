@@ -58,39 +58,54 @@
   }
 }
 
-.Circle {
+.Pokeball {
   --size: 250px;
+  --border: 20px;
   position: absolute;
   bottom: calc(var(--size) / -2);
   left: calc(50% - var(--size) / 2);
-  width: var(--size);
-  height: var(--size);
-  background-color: var(--color-white);
-  border-radius: 50%;
-  box-shadow: 0 0 0 2px var(--color-black);
 
-  &:before {
-    --size: 200px;
-    content: '';
-    position: absolute;
-    bottom: 25px;
-    left: calc(50% - var(--size) / 2);
+  & > div {
     width: var(--size);
-    height: var(--size);
-    border-radius: 50%;
-    background-color: var(--color-black);
+    height: calc(var(--size) / 2);
+    overflow: hidden;
+
+    &:before {
+      content: "";
+      position: relative;
+      display: block;
+      width: calc(var(--size) - var(--border) * 2);
+      height: calc(var(--size) - var(--border) * 2);
+      border-radius: 50%;
+      border: var(--border) solid black;
+    }
+
+    &:first-child {
+      border-bottom: 10px solid black;
+      &:before {
+        background-color: var(--color-red);
+      }
+    }
+
+    &:last-child {
+      &:before {
+        top: calc(var(--size) / -2);
+        background-color: var(--color-white);
+      }
+    }
   }
 
-  &:after {
-    --size: 150px;
-    content: '';
+  & > main {
+    --size: 75px;
     position: absolute;
-    bottom: 50px;
+    top: calc(50% - var(--size) / 2);
     left: calc(50% - var(--size) / 2);
+    z-index: 1;
     width: var(--size);
     height: var(--size);
+    background-color: var(--color-white);
     border-radius: 50%;
-    background-color: var(--color-lightblue);
+    border: 20px solid var(--color-black);
   }
 }
 

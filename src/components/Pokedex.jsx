@@ -71,7 +71,11 @@ export default class extends Component {
             <div className="Corner"></div>
             <div className="Corner large"></div>
           </div>
-          <div className="Circle"></div>
+          <div className="Pokeball">
+            <div></div>
+            <main></main>
+            <div></div>
+          </div>
         </header>
         <main></main>
         <footer className={classes}>
