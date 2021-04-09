@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import Item from 'src/components/Item.jsx'
+import BoxItem from 'src/components/BoxItem.jsx'
 
 export default class extends Component {
   constructor(props) {

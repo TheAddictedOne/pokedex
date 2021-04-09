@@ -1,6 +1,6 @@
 export default function({ numero, name }) {
   return (
-    <div className="Pokemon">
+    <div className="ListItem">
       <div>{`No. ${numero}`}</div>
       <div>
         <span>{name}</span>
