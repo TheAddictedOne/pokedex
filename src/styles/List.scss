@@ -6,6 +6,7 @@
   padding: 10px;
   overflow: scroll;
   background-color: var(--color-light-orange);
+  align-items: stretch;
 
   &::before {
     content: '';

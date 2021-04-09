@@ -3,6 +3,7 @@ import Box from 'src/components/Box.jsx'
 import Navigation from 'src/components/Navigation.jsx'
 import Regions from 'src/components/Regions.jsx'
 import List from 'src/components/List.jsx'
+import Pokemon from 'src/components/Pokemon.jsx'
 import { getBoxes } from 'src/utils.js'
 
 export default class extends Component {
@@ -76,8 +77,7 @@ export default class extends Component {
             <div></div>
             <div></div>
           </div>
-          {/* <Regions /> */}
-          <List />
+          <Pokemon numero="001" name="Pikachu" src="./images/Pikachu.png" type1="electric" type2="fighting" />
         </main>
         <footer>
           <div className="anchor bottom-left">
