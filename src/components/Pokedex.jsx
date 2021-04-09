@@ -71,7 +71,7 @@ export default class extends Component {
           </div>
         </header>
         <main className="Screen">
-          <div className="List">
+          <div className="Icon">
             <div></div>
             <div></div>
             <div></div>
