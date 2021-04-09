@@ -2,6 +2,7 @@ import { Component } from 'react'
 import Box from 'src/components/Box.jsx'
 import Navigation from 'src/components/Navigation.jsx'
 import Regions from 'src/components/Regions.jsx'
+import Pokemons from 'src/components/Pokemons.jsx'
 import { getBoxes } from 'src/utils.js'
 
 export default class extends Component {
@@ -75,7 +76,8 @@ export default class extends Component {
             <div></div>
             <div></div>
           </div>
-          <Regions />
+          {/* <Regions /> */}
+          <Pokemons />
         </main>
         <footer>
           <div className="anchor bottom-left">

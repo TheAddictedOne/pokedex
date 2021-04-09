@@ -2,6 +2,7 @@
   --color-white: white;
   --color-black: black;
   --color-red: #ed1e25;
+  --color-orange: #ee5120;
 
   --size-corner: 120px;
 
@@ -21,4 +22,21 @@ body {
 
 h1 {
   margin: 0;
+}
+
+@keyframes translate-up {
+  from {
+    transform: translateY(0vh);
+  }
+  to {
+    transform: translateY(-100vh);
+  }
+}
+@keyframes translate-down {
+  from {
+    transform: translateY(0vh);
+  }
+  to {
+    transform: translateY(100vh);
+  }
 }
