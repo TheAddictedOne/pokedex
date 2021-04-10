@@ -1,7 +1,7 @@
 import { Component } from 'react'
+import Screen from 'src/components/Screen.jsx'
 import Box from 'src/components/Box.jsx'
 import Navigation from 'src/components/Navigation.jsx'
-import Regions from 'src/components/Regions.jsx'
 import List from 'src/components/List.jsx'
 import Pokemon from 'src/components/Pokemon.jsx'
 import { getBoxes } from 'src/utils.js'
@@ -71,15 +71,7 @@ export default class extends Component {
             <div></div>
           </div>
         </header>
-        <main className="Screen">
-          <div className="Icon">
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-          <List />
-          {/* <Pokemon numero="001" name="Pikachu" src="./images/Pikachu.png" type1="electric" type2="fighting" /> */}
-        </main>
+        <Screen />
         <footer>
           <div className="anchor bottom-left">
             <div className="Corner"></div>
