@@ -77,7 +77,8 @@ export default class extends Component {
             <div></div>
             <div></div>
           </div>
-          <Pokemon numero="001" name="Pikachu" src="./images/Pikachu.png" type1="electric" type2="fighting" />
+          <List />
+          {/* <Pokemon numero="001" name="Pikachu" src="./images/Pikachu.png" type1="electric" type2="fighting" /> */}
         </main>
         <footer>
           <div className="anchor bottom-left">

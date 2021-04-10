@@ -1,10 +1,10 @@
-export default function({ numero, name }) {
+export default function({ numero, name, status }) {
   return (
     <div className="ListItem">
       <div>{`No. ${numero}`}</div>
       <div>
         <span>{name}</span>
-        <div></div>
+        <div className={status}></div>
       </div>
     </div>
   )

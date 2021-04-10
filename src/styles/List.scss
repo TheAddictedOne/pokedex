@@ -67,6 +67,7 @@
         width: var(--height);
         background-color: white;
         border-radius: 50%;
+        display: none;
 
         &::before {
           content: '';
@@ -75,6 +76,7 @@
           height: 6px;
           background-color: black;
           top: calc(50% - 3px);
+          display: none;
         }
 
         &::after {
@@ -87,6 +89,22 @@
           left: calc(50% - 5px);
           border-radius: 50%;
           box-shadow: 0 0 0 5px black;
+          display: none;
+        }
+
+        &.owned {
+          display: block;
+        }
+
+        &.caught {
+          display: block;
+
+          &::before {
+            display: block;
+          }
+          &::after {
+            display: block;
+          }
         }
       }
     }

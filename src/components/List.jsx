@@ -4,8 +4,8 @@ export default function() {
   return (
     <div className="List">
       <ListItem numero="001" name="Pikachu" />
-      <ListItem numero="001" name="Pikachu" />
-      <ListItem numero="001" name="Pikachu" />
+      <ListItem numero="001" name="Pikachu" status="owned" />
+      <ListItem numero="001" name="Pikachu" status="caught" />
       <ListItem numero="001" name="Pikachu" />
       <ListItem numero="001" name="Pikachu" />
       <ListItem numero="001" name="Pikachu" />
