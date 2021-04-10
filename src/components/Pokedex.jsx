@@ -6,7 +6,7 @@ import List from 'src/components/List.jsx'
 import Pokemon from 'src/components/Pokemon.jsx'
 import { getBoxes } from 'src/utils.js'
 
-export default class extends Component {
+export default class Pokedex extends Component {
   constructor(props) {
     super(props)
 

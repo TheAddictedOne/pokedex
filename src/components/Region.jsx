@@ -1,4 +1,4 @@
-export default function({ name, count, total, onClick }) {
+export default function Region({ name, count, total, onClick }) {
   return (
     <div className="Region" onClick={onClick}>
       <h1>{name}</h1>

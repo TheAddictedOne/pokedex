@@ -9,7 +9,7 @@ const URL_GALAR = './data/pokemons.json'
 const URL_ISOLARMURE = './data/galar-isolarmure.json'
 const URL_COURRONEIGE = './data/galar-courroneige.json'
 
-export default class extends Component {
+export default class Screen extends Component {
   constructor(props) {
     super(props)
     this._fetchPokemons = this._fetchPokemons.bind(this)

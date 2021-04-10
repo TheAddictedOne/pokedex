@@ -1,4 +1,4 @@
-export default function({ numero, name, status }) {
+export default function ListItem({ numero, name, status }) {
   return (
     <div className="ListItem">
       <div>{`No. ${numero}`}</div>

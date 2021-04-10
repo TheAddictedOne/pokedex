@@ -1,6 +1,6 @@
 import ListItem from 'src/components/ListItem.jsx'
 
-export default function() {
+export default function List() {
   return (
     <div className="List">
       <ListItem numero="001" name="Pikachu" />
