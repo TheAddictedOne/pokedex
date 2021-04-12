@@ -9,18 +9,39 @@
 
 .Region {
   --color: rgba(255, 255, 255, .3);
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
   margin-bottom: 20px;
-  border-radius: 75px / 100%;
+  border-radius: 75px;
   font-size: 20px;
   width: 100%;
   background-color: var(--color);
   border: 1px solid white;
+  overflow: hidden;
+  outline: none;
 
   & > h1 {
     font-size: 24px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -115%;
+    background-color: rgba(255, 255, 255, .5);
+    width: 110%;
+    height: 100%;
+    transform: skewX(-30deg) translateX(0);
+    transition: transform .4s ease;
+  }
+
+  &:focus {
+    &::before {
+      transform: skewX(-30deg) translateX(100%);
+    }
   }
 }

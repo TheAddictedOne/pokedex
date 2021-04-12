@@ -20,6 +20,7 @@ export default class Screen extends Component {
   }
 
   _fetchPokemons(url) {
+    return
     fetch(url).then((response) => response.json()).then((pokemons) => {
       this.setState({ screen: SCREEN_LIST, pokemons })
     })
