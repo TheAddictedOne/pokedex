@@ -1,22 +1,28 @@
 .List {
+  position: absolute;
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   padding: 10px;
   overflow: scroll;
   background-color: var(--color-light-orange);
   align-items: stretch;
+  transition: transform .5s ease .25s;
 
   &::before {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: -60%;
     transform: skewX(-10deg);
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: var(--color-dark-orange);
+  }
+
+  &.translated {
+    transform: translateX(100%);
   }
 }
 

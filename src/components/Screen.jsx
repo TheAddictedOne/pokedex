@@ -20,7 +20,6 @@ export default class Screen extends Component {
   }
 
   _fetchPokemons(url) {
-    return
     fetch(url).then((response) => response.json()).then((pokemons) => {
       this.setState({ screen: SCREEN_LIST, pokemons })
     })
@@ -35,19 +34,12 @@ export default class Screen extends Component {
           <div></div>
           <div></div>
         </div>
-        {
-          this.state.screen === SCREEN_REGIONS
-            ? (
-              <div className="Regions">
-                <Region name="Galar" count="400" total="400" onClick={() => this._fetchPokemons(URL_GALAR)} />
-                <Region name="Isolarmure" count="210" total="210" onClick={() => this._fetchPokemons(URL_ISOLARMURE)} />
-                <Region name="Courroneige" count="123" total="210" onClick={() => this._fetchPokemons(URL_COURRONEIGE)} />
-              </div>
-            )
-            : (
-              <List pokemons={this.state.pokemons} />
-            )
-          }
+        <div className={`Regions ${this.state.screen === SCREEN_REGIONS ? '' : 'translate'}`}>
+          <Region name="Galar" count="400" total="400" onClick={() => this._fetchPokemons(URL_GALAR)} />
+          <Region name="Isolarmure" count="210" total="210" onClick={() => this._fetchPokemons(URL_ISOLARMURE)} />
+          <Region name="Courroneige" count="123" total="210" onClick={() => this._fetchPokemons(URL_COURRONEIGE)} />
+        </div>
+        <List translated={this.state.screen === SCREEN_REGIONS} pokemons={this.state.pokemons} />
       </main>
     )
   }
