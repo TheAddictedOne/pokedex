@@ -13,6 +13,7 @@ export default class Screen extends Component {
   constructor(props) {
     super(props)
     this._fetchPokemons = this._fetchPokemons.bind(this)
+    this._onBack = this._onBack.bind(this)
     this.state = {
       screen: SCREEN_REGIONS,
       pokemons: []
@@ -23,6 +24,10 @@ export default class Screen extends Component {
     fetch(url).then((response) => response.json()).then((pokemons) => {
       this.setState({ screen: SCREEN_LIST, pokemons })
     })
+  }
+
+  _onBack() {
+    this.setState({ screen: SCREEN_REGIONS })
   }
 
   render() {
@@ -39,7 +44,7 @@ export default class Screen extends Component {
           <Region name="Isolarmure" count="210" total="210" onClick={() => this._fetchPokemons(URL_ISOLARMURE)} />
           <Region name="Courroneige" count="123" total="210" onClick={() => this._fetchPokemons(URL_COURRONEIGE)} />
         </div>
-        <List translated={this.state.screen === SCREEN_REGIONS} pokemons={this.state.pokemons} />
+        <List translated={this.state.screen === SCREEN_REGIONS} pokemons={this.state.pokemons} onBack={this._onBack} />
       </main>
     )
   }
