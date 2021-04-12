@@ -1,18 +1,13 @@
 import ListItem from 'src/components/ListItem.jsx'
 
-export default function List() {
+export default function List({ pokemons }) {
   return (
     <div className="List">
-      <ListItem numero="001" name="Pikachu" />
-      <ListItem numero="001" name="Pikachu" status="owned" />
-      <ListItem numero="001" name="Pikachu" status="caught" />
-      <ListItem numero="001" name="Pikachu" />
-      <ListItem numero="001" name="Pikachu" />
-      <ListItem numero="001" name="Pikachu" />
-      <ListItem numero="001" name="Pikachu" />
-      <ListItem numero="001" name="Pikachu" />
-      <ListItem numero="001" name="Pikachu" />
-      <ListItem numero="001" name="Raichu" />
+      {
+        pokemons.map(({ numero, name, localization }) => {
+          return <ListItem key={numero} numero={numero} name={name} localization={localization} />
+        })
+      }
     </div>
   )
 }

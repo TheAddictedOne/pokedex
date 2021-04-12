@@ -5,7 +5,7 @@ import List from 'src/components/List.jsx'
 const SCREEN_REGIONS = 'regions'
 const SCREEN_LIST = 'list'
 
-const URL_GALAR = './data/pokemons.json'
+const URL_GALAR = './data/galar.json'
 const URL_ISOLARMURE = './data/galar-isolarmure.json'
 const URL_COURRONEIGE = './data/galar-courroneige.json'
 
@@ -14,7 +14,7 @@ export default class Screen extends Component {
     super(props)
     this._fetchPokemons = this._fetchPokemons.bind(this)
     this.state = {
-      screen: 'regions',
+      screen: SCREEN_REGIONS,
       pokemons: []
     }
   }
