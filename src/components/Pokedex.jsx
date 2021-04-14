@@ -1,8 +1,6 @@
 import { Component } from 'react'
 import Screen from 'src/components/Screen.jsx'
-import Box from 'src/components/Box.jsx'
 import List from 'src/components/List.jsx'
-import { getBoxes } from 'src/utils.js'
 
 export default class Pokedex extends Component {
   constructor(props) {
@@ -25,10 +23,6 @@ export default class Pokedex extends Component {
   selectTab(event) {
     const { tab: currentTab, src } = event.target.dataset
     this.setState({ currentTab, boxes: [], pokemonCaught: '-', max: '-' })
-    getBoxes(src).then(({ boxes, max }) => {
-      const pokemonCaught = this.count(boxes)
-      this.setState({ boxes, pokemonCaught, max })
-    })
   }
 
   count(boxes) {
