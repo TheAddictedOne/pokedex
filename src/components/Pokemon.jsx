@@ -4,16 +4,18 @@ export default function Pokemon({ translated, pokemon }) {
   return (
     <div className={`Pokemon ${translated ? 'translated' : ''}`}>
       <ListItem numero={pokemon.numero} name={pokemon.name} />
-      <img src={pokemon.src} />
+      <img src={`./images/${pokemon.name}.png`} />
       <main>
         <section>
           <h1>Types</h1>
           <div>
-            <img src={`./images/types/${pokemon.type1}.png`} />
-            <img src={`./images/types/${pokemon.type2}.png`} />
+            {pokemon.types
+              ? pokemon.types.map((type, i) => <img key="i" src={`./images/types/${type}.png`} />)
+              : null
+            }
           </div>
         </section>
-        <section>
+        {/* <section>
           <h1>Weak</h1>
           <div>
             <img src={`./images/types/ground.png`} />
@@ -23,8 +25,8 @@ export default function Pokemon({ translated, pokemon }) {
         <section>
           <h1>Where</h1>
           <div>{pokemon.localization}</div>
-        </section>
-        <section>
+        </section> */}
+        {/* <section>
           <h1>When</h1>
           <div>
             <img src={`./images/weathers/clear.png`} />
@@ -37,7 +39,7 @@ export default function Pokemon({ translated, pokemon }) {
             <img src={`./images/weathers/sunny.png`} />
             <img src={`./images/weathers/thunderstorm.png`} />
           </div>
-        </section>
+        </section> */}
       </main>
     </div>
   )
