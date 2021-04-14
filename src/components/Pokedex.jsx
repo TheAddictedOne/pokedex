@@ -1,51 +1,12 @@
 import { Component } from 'react'
 import Screen from 'src/components/Screen.jsx'
-import List from 'src/components/List.jsx'
 
 export default class Pokedex extends Component {
   constructor(props) {
     super(props)
-
-    this.selectTab = this.selectTab.bind(this)
-    this.count = this.count.bind(this)
-    this.recount = this.recount.bind(this)
-    this.displayOnlyMissing = this.displayOnlyMissing.bind(this)
-
-    this.state = {
-      currentTab: null,
-      boxes: [],
-      pokemonCaught: '-',
-      max: '-',
-      onlyMissing: false,
-    }
-  }
-
-  selectTab(event) {
-    const { tab: currentTab, src } = event.target.dataset
-    this.setState({ currentTab, boxes: [], pokemonCaught: '-', max: '-' })
-  }
-
-  count(boxes) {
-    let counter = 0
-    boxes.forEach((pokemons) => {
-      pokemons.forEach((name) => {
-        if (localStorage.getItem(name)) counter++
-      })
-    })
-    return counter
-  }
-
-  recount(event) {
-    this.setState({ pokemonCaught: this.count(this.state.boxes) })
-  }
-
-  displayOnlyMissing() {
-    this.setState({ onlyMissing: !this.state.onlyMissing })
   }
 
   render() {
-    const { currentTab, boxes, pokemonCaught, max, onlyMissing } = this.state
-
     return (
       <div className="Pokedex">
         <header>
