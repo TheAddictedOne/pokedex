@@ -1,4 +1,27 @@
 import ListItem from 'src/components/ListItem.jsx'
+import { getWeaknesses } from 'src/utils.js'
+
+function Types({ types }) {
+  if (!types) return null
+
+  return (
+    <div>
+      {types.map((type, i) => <img key="i" src={`./images/types/${type}.png`} />)}
+    </div>
+  )
+}
+
+function Weaknesses({ types }) {
+  if (!types) return null
+
+  const weaknesses = getWeaknesses(types)
+
+  return (
+    <div>
+      {weaknesses.map((weakness, i) => <img key={i} src={`./images/types/${weakness}.png`} />)}
+    </div>
+  )
+}
 
 export default function Pokemon({ translated, pokemon }) {
   return (
@@ -8,21 +31,13 @@ export default function Pokemon({ translated, pokemon }) {
       <main>
         <section>
           <h1>Types</h1>
-          <div>
-            {pokemon.types
-              ? pokemon.types.map((type, i) => <img key="i" src={`./images/types/${type}.png`} />)
-              : null
-            }
-          </div>
-        </section>
-        {/* <section>
-          <h1>Weak</h1>
-          <div>
-            <img src={`./images/types/ground.png`} />
-            <img src={`./images/types/fire.png`} />
-          </div>
+          <Types types={pokemon.types} />
         </section>
         <section>
+          <h1>Weak</h1>
+          <Weaknesses types={pokemon.types} />
+        </section>
+        {/* <section>
           <h1>Where</h1>
           <div>{pokemon.localization}</div>
         </section> */}
