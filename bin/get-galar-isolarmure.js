@@ -6,8 +6,8 @@ const { clean, getTypes } = require('./utils.js')
 
 const isVerbose = process.argv.includes('--verbose')
 
-const DEST = path.resolve(__dirname, '../data/galar.json')
-const URL = 'https://www.pokepedia.fr/Liste_des_Pok%C3%A9mon_dans_l%27ordre_du_Pok%C3%A9dex_de_Galar'
+const DEST = path.resolve(__dirname, '../data/galar-isolarmure.json')
+const URL = 'https://www.pokepedia.fr/Liste_des_Pok%C3%A9mon_dans_l%27ordre_du_Pok%C3%A9dex_d%27Isolarmure'
 
 request({ method: 'GET', url: URL }, (err, res, body) => {
   const pokemons = []

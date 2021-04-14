@@ -6,7 +6,7 @@ function Types({ types }) {
 
   return (
     <div>
-      {types.map((type, i) => <img key="i" src={`./images/types/${type}.png`} />)}
+      {types.map((type, i) => <img key={i} src={`./images/types/${type}.png`} />)}
     </div>
   )
 }

@@ -9,7 +9,7 @@ const SCREEN_POKEMON = 'pokemon'
 
 const URL_GALAR = './data/galar.json'
 const URL_ISOLARMURE = './data/galar-isolarmure.json'
-const URL_COURRONEIGE = './data/galar-courroneige.json'
+const URL_COURONNEIGE = './data/galar-couronneige.json'
 
 export default class Screen extends Component {
   constructor(props) {
@@ -55,7 +55,7 @@ export default class Screen extends Component {
         <div className={`Regions ${this.state.screen === SCREEN_REGIONS ? '' : 'translate'}`}>
           <Region name="Galar" count="400" total="400" onClick={() => this._fetchPokemons(URL_GALAR)} />
           <Region name="Isolarmure" count="210" total="210" onClick={() => this._fetchPokemons(URL_ISOLARMURE)} />
-          <Region name="Courroneige" count="123" total="210" onClick={() => this._fetchPokemons(URL_COURRONEIGE)} />
+          <Region name="Couronneige" count="123" total="210" onClick={() => this._fetchPokemons(URL_COURONNEIGE)} />
         </div>
         <List translated={this.state.screen !== SCREEN_LIST} pokemons={this.state.pokemons} onClick={this._displayPokemon} onBack={this._onBack} />
         <Pokemon translated={this.state.screen !== SCREEN_POKEMON} pokemon={this.state.pokemon} />
