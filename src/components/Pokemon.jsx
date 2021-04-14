@@ -1,16 +1,16 @@
 import ListItem from 'src/components/ListItem.jsx'
 
-export default function Pokemon({ numero, name, src, type1, type2 }) {
+export default function Pokemon({ translated, pokemon }) {
   return (
-    <div className="Pokemon">
-      <ListItem numero={numero} name={name} />
-      <img src={src} />
+    <div className={`Pokemon ${translated ? 'translated' : ''}`}>
+      <ListItem numero={pokemon.numero} name={pokemon.name} />
+      <img src={pokemon.src} />
       <main>
         <section>
           <h1>Types</h1>
           <div>
-            <img src={`./images/types/${type1}.png`} />
-            <img src={`./images/types/${type2}.png`} />
+            <img src={`./images/types/${pokemon.type1}.png`} />
+            <img src={`./images/types/${pokemon.type2}.png`} />
           </div>
         </section>
         <section>
@@ -22,7 +22,7 @@ export default function Pokemon({ numero, name, src, type1, type2 }) {
         </section>
         <section>
           <h1>Where</h1>
-          <div>Route 102</div>
+          <div>{pokemon.localization}</div>
         </section>
         <section>
           <h1>When</h1>

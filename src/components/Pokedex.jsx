@@ -3,7 +3,6 @@ import Screen from 'src/components/Screen.jsx'
 import Box from 'src/components/Box.jsx'
 import Navigation from 'src/components/Navigation.jsx'
 import List from 'src/components/List.jsx'
-import Pokemon from 'src/components/Pokemon.jsx'
 import { getBoxes } from 'src/utils.js'
 
 export default class Pokedex extends Component {

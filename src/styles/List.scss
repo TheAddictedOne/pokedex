@@ -6,20 +6,8 @@
   height: 100%;
   padding: 10px;
   overflow: scroll;
-  background-color: var(--color-light-orange);
   align-items: stretch;
-  transition: transform .5s ease .25s;
-
-  &::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: -60%;
-    transform: skewX(-10deg);
-    width: 100%;
-    height: 100%;
-    background-color: var(--color-dark-orange);
-  }
+  transition: transform .5s ease;
 
   &.translated {
     transform: translateX(100%);
@@ -33,6 +21,10 @@
   border-radius: 30px;
   align-items: center;
   margin: 10px;
+
+  & * {
+    pointer-events: none;
+  }
 
   & > div {
     position: relative;
