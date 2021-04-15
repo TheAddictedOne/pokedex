@@ -4,52 +4,52 @@
   --color: rgba(255, 255, 255, 0.3);
   --thickness: 5vw;
 
-  position: absolute;
-  bottom: 5%;
-  left: 0;
-  right: 0;
-  width: var(--width);
-  height: var(--height);
+  align-items: center;
   border: var(--thickness) solid var(--color);
-  margin: 0 auto;
   border-radius: 40px;
+  bottom: 5%;
   display: flex;
   flex-direction: column;
+  height: var(--height);
   justify-content: space-around;
-  align-items: center;
+  left: 0;
+  margin: 0 auto;
   padding: 10px;
+  position: absolute;
+  right: 0;
   transform: rotate(-15deg);
+  width: var(--width);
 
   &::after {
-    content: 'v2.0.0';
-    position: absolute;
     bottom: 3px;
-    right: 7px;
     color: var(--color);
+    content: 'v2.0.0';
+    font-family: monospace;
     font-size: 18px;
     font-weight: bold;
-    font-family: monospace;
+    position: absolute;
+    right: 7px;
   }
 
   & > div {
     --height: var(--thickness);
 
+    background-color: var(--color);
+    border-radius: var(--thickness);
+    height: var(--height);
+    margin-left: calc(var(--thickness) * 2);
     position: relative;
     width: 60%;
-    height: var(--height);
-    background-color: var(--color);
-    margin-left: calc(var(--thickness) * 2);
-    border-radius: var(--thickness);
 
     &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: calc(var(--thickness) * -2);
-      width: var(--height);
-      height: var(--height);
       background-color: var(--color);
       border-radius: 50%;
+      content: '';
+      height: var(--height);
+      left: calc(var(--thickness) * -2);
+      position: absolute;
+      top: 0;
+      width: var(--height);
     }
   }
 }
