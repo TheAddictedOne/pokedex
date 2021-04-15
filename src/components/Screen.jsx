@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import BackgroundIcon from 'src/components/BackgroundIcon.jsx'
 import Region from 'src/components/Region.jsx'
 import List from 'src/components/List.jsx'
 import Pokemon from 'src/components/Pokemon.jsx'
@@ -46,12 +47,7 @@ export default class Screen extends Component {
   render() {
     return (
       <main className="Screen">
-        <div className="Icon">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+        <BackgroundIcon />
         <div className={`Regions ${this.state.screen === SCREEN_REGIONS ? '' : 'translate'}`}>
           <Region name="Galar" count="400" total="400" onClick={() => this._fetchPokemons(URL_GALAR)} />
           <Region name="Isolarmure" count="210" total="210" onClick={() => this._fetchPokemons(URL_ISOLARMURE)} />
