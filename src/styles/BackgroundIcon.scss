@@ -1,7 +1,7 @@
 .BackgroundIcon {
   --width: 90vw;
   --height: calc(var(--width) * 2 / 3);
-  --color: rgba(255, 255, 255, .3);
+  --color: rgba(255, 255, 255, 0.3);
   --thickness: 5vw;
 
   position: absolute;
@@ -33,6 +33,7 @@
 
   & > div {
     --height: var(--thickness);
+
     position: relative;
     width: 60%;
     height: var(--height);

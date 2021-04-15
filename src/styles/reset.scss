@@ -7,10 +7,8 @@
   --color-dark-orange: #f4533b;
   --color-orange: #ee5120;
   --color-light-orange: #f77248;
-
   --type-bug-background: #1c4b27;
   --type-bug-text: #3b9950;
-
   --size-corner: 120px;
 
   font-family: sans-serif;
@@ -33,16 +31,19 @@ h1 {
 
 @keyframes translate-up {
   from {
-    transform: translateY(0vh);
+    transform: translateY(0);
   }
+
   to {
     transform: translateY(-100vh);
   }
 }
+
 @keyframes translate-down {
   from {
-    transform: translateY(0vh);
+    transform: translateY(0);
   }
+
   to {
     transform: translateY(100vh);
   }
