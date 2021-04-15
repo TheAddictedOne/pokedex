@@ -7,31 +7,26 @@
   align-items: center;
   border: var(--thickness) solid var(--color);
   border-radius: 40px;
-  bottom: 5%;
+  bottom: 0;
   display: flex;
   flex-direction: column;
+  font: 18px monospace;
   height: var(--height);
   justify-content: space-around;
-  left: 0;
-  margin: 0 auto;
   padding: 10px;
   position: absolute;
-  right: 0;
   transform: rotate(-15deg);
   width: var(--width);
 
   &::after {
-    bottom: 3px;
+    bottom: 0;
     color: var(--color);
     content: 'v2.0.0';
-    font-family: monospace;
-    font-size: 18px;
-    font-weight: bold;
     position: absolute;
-    right: 7px;
+    right: 15px;
   }
 
-  & > div {
+  & > span {
     --height: var(--thickness);
 
     background-color: var(--color);
@@ -39,7 +34,7 @@
     height: var(--height);
     margin-left: calc(var(--thickness) * 2);
     position: relative;
-    width: 60%;
+    width: 50%;
 
     &::before {
       background-color: var(--color);
