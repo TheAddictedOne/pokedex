@@ -1,3 +1,4 @@
+import { SCREENS } from 'src/constants.js'
 import ListItem from 'src/components/ListItem.jsx'
 import { getWeaknesses } from 'src/utils.js'
 
@@ -23,9 +24,9 @@ function Weaknesses({ types }) {
   )
 }
 
-export default function Pokemon({ translated, pokemon }) {
+export default function Pokemon({ currentScreen, pokemon }) {
   return (
-    <div className={`Pokemon ${translated ? 'translated' : ''}`}>
+    <div className={`Pokemon ${currentScreen === SCREENS.POKEMON ? '' : 'translated'}`}>
       <ListItem numero={pokemon.numero} name={pokemon.name} />
       <img src={`./images/${pokemon.name}.png`} />
       <main>

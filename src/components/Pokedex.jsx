@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import Header from 'src/components/Header.jsx'
-import Screen from 'src/components/Screen.jsx'
+import Screens from 'src/components/Screens.jsx'
 import Footer from 'src/components/Footer.jsx'
 
 export default class Pokedex extends Component {
@@ -12,7 +12,7 @@ export default class Pokedex extends Component {
     return (
       <div className="Pokedex">
         <Header />
-        <Screen />
+        <Screens />
         <Footer />
       </div>
     )

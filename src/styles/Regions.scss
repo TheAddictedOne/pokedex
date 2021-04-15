@@ -10,7 +10,7 @@
   padding: 20px;
   color: rgba(0, 0, 0, .75);
 
-  &.translate {
+  &.translated {
     & > .Region {
       transform: translateX(120%);
     }
