@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import { SCREENS, URLS } from 'src/constants.js'
+import BackButton from 'src/components/BackButton.jsx'
 import BackgroundIcon from 'src/components/BackgroundIcon.jsx'
 import Regions from 'src/components/Regions.jsx'
 import List from 'src/components/List.jsx'
@@ -16,10 +17,6 @@ export default class Screens extends Component {
         galar: () => this._fetchPokemons(URLS.GALAR),
         isolarmure: () => this._fetchPokemons(URLS.ISOLARMURE),
         couronneige: () => this._fetchPokemons(URLS.COURONNEIGE),
-      },
-      listHandlers: {
-        clickOnPokemon: this._displayPokemon,
-        clickOnBack: this._onBack
       },
       screen: SCREENS.REGIONS,
       pokemons: [],
@@ -43,7 +40,8 @@ export default class Screens extends Component {
   }
 
   _onBack() {
-    this.setState({ screen: SCREENS.REGIONS })
+    console.log('click')
+    this.setState({ screen: this.state.screen === SCREENS.POKEMON ? SCREENS.LIST : SCREENS.REGIONS })
   }
 
   render() {
@@ -51,8 +49,9 @@ export default class Screens extends Component {
       <main className="Screens">
         <BackgroundIcon />
         <Regions currentScreen={this.state.screen} handlers={this.state.regionHandlers} />
-        <List currentScreen={this.state.screen} handlers={this.state.listHandlers} pokemons={this.state.pokemons} />
+        <List currentScreen={this.state.screen} onClick={this._displayPokemon} pokemons={this.state.pokemons} />
         <Pokemon currentScreen={this.state.screen} pokemon={this.state.pokemon} />
+        {this.state.screen !== SCREENS.REGIONS ? <BackButton onClick={this._onBack} /> : null}
       </main>
     )
   }
