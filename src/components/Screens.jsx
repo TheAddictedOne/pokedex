@@ -40,7 +40,6 @@ export default class Screens extends Component {
   }
 
   _onBack() {
-    console.log('click')
     this.setState({ screen: this.state.screen === SCREENS.POKEMON ? SCREENS.LIST : SCREENS.REGIONS })
   }
 
