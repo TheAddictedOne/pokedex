@@ -1,6 +1,6 @@
 import { SCREENS } from 'src/constants.js'
 import ListItem from 'src/components/ListItem.jsx'
-import { getWeaknesses } from 'src/utils.js'
+import { getAffinities } from 'src/utils.js'
 
 function Types({ types }) {
   if (!types) return null
@@ -12,19 +12,22 @@ function Types({ types }) {
   )
 }
 
-function Weaknesses({ types }) {
-  if (!types) return null
-
-  const weaknesses = getWeaknesses(types)
-
-  return (
-    <div>
-      {weaknesses.map((weakness, i) => <img key={i} src={`./images/types/${weakness}.png`} />)}
-    </div>
-  )
+function Affinities({ affinities }) {
+  return Object.keys(affinities).map((name, key) => {
+    return (
+      <section key={key}>
+        <h1>{name}</h1>
+        <div>
+          {affinities[name].map((type, i) => <img key={i} src={`./images/types/${type}.png`} />)}
+        </div>
+      </section>
+    )
+  })
 }
 
 export default function Pokemon({ currentScreen, pokemon }) {
+  if (!pokemon.types) return null
+
   return (
     <div className={`Pokemon ${currentScreen === SCREENS.POKEMON ? '' : 'translated'}`}>
       <ListItem numero={pokemon.numero} name={pokemon.name} />
@@ -34,28 +37,7 @@ export default function Pokemon({ currentScreen, pokemon }) {
           <h1>Types</h1>
           <Types types={pokemon.types} />
         </section>
-        <section>
-          <h1>Weak</h1>
-          <Weaknesses types={pokemon.types} />
-        </section>
-        {/* <section>
-          <h1>Where</h1>
-          <div>{pokemon.localization}</div>
-        </section> */}
-        {/* <section>
-          <h1>When</h1>
-          <div>
-            <img src={`./images/weathers/clear.png`} />
-            <img src={`./images/weathers/cloudy.png`} />
-            <img src={`./images/weathers/fog.png`} />
-            <img src={`./images/weathers/rain.png`} />
-            <img src={`./images/weathers/sandstorm.png`} />
-            <img src={`./images/weathers/snow.png`} />
-            <img src={`./images/weathers/snowstorm.png`} />
-            <img src={`./images/weathers/sunny.png`} />
-            <img src={`./images/weathers/thunderstorm.png`} />
-          </div>
-        </section> */}
+        <Affinities affinities={getAffinities(pokemon.types)} />
       </main>
     </div>
   )
