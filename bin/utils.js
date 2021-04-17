@@ -1,7 +1,5 @@
 function clean(str) {
-  return str
-    .replace(/^\s+|\s+$/g, '') // Remove whitespaces
-    .toLowerCase()
+  return str.replace(/^\s+|\s+$/g, '') // Remove whitespaces
 }
 
 function getTypes(node) {
