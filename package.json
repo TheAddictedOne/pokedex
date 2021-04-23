@@ -2,6 +2,7 @@
   "private": true,
   "dependencies": {
     "cheerio": "^1.0.0-rc.5",
+    "express": "^4.17.1",
     "jsdom": "^16.5.1",
     "node-html-parser": "^3.1.0",
     "react": "^17.0.1",
@@ -28,11 +29,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
-    "start": "webpack serve --mode development",
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "pokemons": "node ./bin/get-pokemons-from-pokebip.js",
-    "fetch-isolarmure-pokemons": "node ./bin/get-pokemons-for-isolarmure.js"
+    "start": "node index.js"
   },
   "babel": {
     "presets": [
