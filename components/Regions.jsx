@@ -1,9 +1,9 @@
 import { SCREENS } from 'constants.js'
-import { regions, translated } from 'styles/regions.module.css'
+import { regions, region, translated } from 'styles/regions.module.css'
 
 function Region({ name, count, total, onClick }) {
   return (
-    <div className="Region" onClick={onClick}>
+    <div className={region} onClick={onClick}>
       <h1>{name}</h1>
       <span>{count} / {total}</span>
     </div>

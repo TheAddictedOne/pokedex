@@ -1,7 +1,7 @@
 import { SCREENS } from 'constants.js'
 import ListItem from 'components/ListItem.jsx'
 import { getAffinities } from 'utils.js'
-import { pokemon, translated } from 'styles/pokemon.module.css'
+import { pokmon, translated } from 'styles/pokemon.module.css'
 
 function Types({ types }) {
   if (!types) return null
@@ -30,7 +30,7 @@ export default function Pokemon({ currentScreen, pokemon }) {
   if (!pokemon.types) return null
 
   return (
-    <div className={`${pokemon} ${currentScreen === SCREENS.POKEMON ? '' : translated}`}>
+    <div className={`${pokmon} ${currentScreen === SCREENS.POKEMON ? '' : translated}`}>
       <ListItem numero={pokemon.numero} name={pokemon.name} />
       <img src={`./images/${pokemon.name}.png`} />
       <main>

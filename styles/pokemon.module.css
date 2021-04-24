@@ -1,4 +1,4 @@
-.pokemon {
+.pokmon {
   align-items: stretch;
   display: flex;
   flex-direction: column;
@@ -9,11 +9,11 @@
   width: 100%;
 }
 
-.pokemon.translated {
+.translated {
   transform: translateX(200%);
 }
 
-.pokemon > img {
+.pokmon > img {
   align-self: center;
   display: flex;
   height: 25vh;
@@ -21,23 +21,23 @@
   position: relative;
 }
 
-.pokemon > main {
+.pokmon > main {
   background-color: var(--color-white);
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
-.pokemon > main > section {
+.pokmon > main > section {
   border-bottom: 3px solid var(--color-grey-dark);
   display: flex;
 }
 
-.pokemon > main > section:last-child {
+.pokmon > main > section:last-child {
   border-bottom: none;
 }
 
-.pokemon > main > section > h1 {
+.pokmon > main > section > h1 {
   align-items: center;
   background-color: var(--color-grey);
   display: flex;
@@ -47,7 +47,7 @@
   width: 100px;
 }
 
-.pokemon > main > section > div {
+.pokmon > main > section > div {
   display: flex;
   flex: 2;
   flex-grow: 1;
@@ -55,7 +55,7 @@
   padding: 10px;
 }
 
-.pokemon > main > section > div > img {
+.pokmon > main > section > div > img {
   height: 40px;
   margin-right: 10px;
 }
