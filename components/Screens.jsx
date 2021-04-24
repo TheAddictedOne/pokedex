@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { SCREENS, URLS } from 'constants.js'
+import { SCREENS } from 'constants.js'
 import BackButton from 'components/BackButton.jsx'
 import BackgroundIcon from 'components/BackgroundIcon.jsx'
 import Regions from 'components/Regions.jsx'
@@ -15,9 +15,9 @@ export default class Screens extends Component {
     this._onBack = this._onBack.bind(this)
     this.state = {
       regionHandlers: {
-        galar: () => this._fetchPokemons(URLS.GALAR),
-        isolarmure: () => this._fetchPokemons(URLS.ISOLARMURE),
-        couronneige: () => this._fetchPokemons(URLS.COURONNEIGE),
+        galar: () => this._fetchPokemons(props.data.galar),
+        isolarmure: () => this._fetchPokemons(props.data.isolarmure),
+        couronneige: () => this._fetchPokemons(props.data.couronneige),
       },
       screen: SCREENS.REGIONS,
       pokemons: [],
@@ -25,10 +25,8 @@ export default class Screens extends Component {
     }
   }
 
-  _fetchPokemons(url) {
-    fetch(url).then((response) => response.json()).then((pokemons) => {
-      this.setState({ screen: SCREENS.LIST, pokemons })
-    })
+  _fetchPokemons(pokemons) {
+    this.setState({ screen: SCREENS.LIST, pokemons })
   }
 
   _displayPokemon(event) {

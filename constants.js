@@ -5,7 +5,7 @@ export const SCREENS = {
 }
 
 export const URLS = {
-  GALAR: './data/galar.json',
-  ISOLARMURE: './data/galar-isolarmure.json',
-  COURONNEIGE: './data/galar-couronneige.json',
+  GALAR: 'data/galar.json',
+  ISOLARMURE: 'data/galar-isolarmure.json',
+  COURONNEIGE: 'data/galar-couronneige.json',
 }
