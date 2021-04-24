@@ -1,5 +1,5 @@
-import Corner from 'src/components/Corner.jsx'
-import Pokeball from 'src/components/Pokeball.jsx'
+import Corner from 'components/Corner.jsx'
+import Pokeball from 'components/Pokeball.jsx'
 
 export default function Header() {
   return (

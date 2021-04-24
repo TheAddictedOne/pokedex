@@ -1,4 +1,4 @@
-.Region {
+.region {
   --color: rgba(255, 255, 255, 0.3);
 
   align-items: center;
@@ -16,21 +16,21 @@
   position: relative;
   transition: transform 0.5s ease;
   width: 100%;
-
-  & > h1 {
-    font-size: 24px;
-  }
-
-  &:nth-child(2) {
-    transition-delay: 0.05s;
-  }
-
-  &:nth-child(3) {
-    transition-delay: 0.1s;
-  }
 }
 
-.Regions {
+.region > h1 {
+  font-size: 24px;
+}
+
+.region:nth-child(2) {
+  transition-delay: 0.05s;
+}
+
+.region:nth-child(3) {
+  transition-delay: 0.1s;
+}
+
+.regions {
   align-items: center;
   color: rgba(0, 0, 0, 0.75);
   display: flex;
@@ -41,12 +41,10 @@
   position: absolute;
   top: 0;
   width: 100%;
+}
 
-  &.translated {
-    & > .Region {
-      transform: translateX(200%);
-    }
-  }
+.regions.translated > .Region {
+  transform: translateX(200%);
 }
 
 @keyframes rebound-and-disappear {

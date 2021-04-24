@@ -1,0 +1,113 @@
+.list {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: scroll;
+  padding: 10px;
+  position: absolute;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.list.translated {
+  transform: translateX(200%);
+}
+
+.listitem {
+  --height: 40px;
+
+  align-items: center;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  height: var(--height);
+  margin: 10px;
+}
+
+.listitem * {
+  pointer-events: none;
+}
+
+.listitem > div {
+  border: 5px solid black;
+  color: white;
+  padding: 10px;
+  position: relative;
+}
+
+.listitem > div:first-child {
+  background-color: var(--color-orange);
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+  width: 110px;
+}
+
+.listitem > div:first-child::after {
+  background-color: black;
+  content: '';
+  height: 100%;
+  position: absolute;
+  right: -10px;
+  top: 0;
+  transform: skewX(-20deg);
+  width: 20px;
+}
+
+.listitem > div:last-child {
+  background-color: var(--color-black);
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
+  flex-grow: 1;
+  padding-left: 0;
+}
+
+.listitem > div:last-child > div:last-child {
+  background-color: white;
+  border-radius: 50%;
+  display: none;
+  height: var(--height);
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: var(--height);
+}
+
+.listitem > div:last-child > div:last-child::before {
+  background-color: black;
+  content: '';
+  display: none;
+  height: 6px;
+  position: absolute;
+  top: calc(50% - 3px);
+  width: 100%;
+}
+
+.listitem > div:last-child > div:last-child::after {
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px black;
+  content: '';
+  display: none;
+  height: 10px;
+  left: calc(50% - 5px);
+  position: absolute;
+  top: calc(50% - 5px);
+  width: 10px;
+}
+
+.listitem > div:last-child > div:last-child.owned {
+  display: block;
+}
+
+.listitem > div:last-child > div:last-child.caught {
+  display: block;
+}
+
+.listitem > div:last-child > div:last-child.caught::before {
+  display: block;
+}
+
+.listitem > div:last-child > div:last-child.caught::after {
+  display: block;
+}

@@ -1,0 +1,63 @@
+.pokedex {
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.pokedex > header,
+.pokedex > footer {
+  background-color: var(--color-red);
+  height: 50vh;
+  position: absolute;
+  width: 100vw;
+}
+
+.pokedex > header::after,
+.pokedex > footer::after {
+  background-color: var(--color-black);
+  content: '';
+  height: 5px;
+  position: absolute;
+  width: 100%;
+}
+
+.pokedex > header {
+  animation: translate-up 1s ease 1s forwards;
+  top: 0;
+  z-index: 1;
+}
+
+.pokedex > header::after {
+  bottom: 0;
+}
+
+.pokedex > footer {
+  animation: translate-down 1s ease 1s forwards;
+  bottom: 0;
+}
+
+.pokedex > footer::after {
+  top: 0;
+}
+
+@keyframes translate-up {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100vh);
+  }
+}
+
+@keyframes translate-down {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100vh);
+  }
+}

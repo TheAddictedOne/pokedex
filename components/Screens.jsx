@@ -1,10 +1,11 @@
 import { Component } from 'react'
-import { SCREENS, URLS } from 'src/constants.js'
-import BackButton from 'src/components/BackButton.jsx'
-import BackgroundIcon from 'src/components/BackgroundIcon.jsx'
-import Regions from 'src/components/Regions.jsx'
-import List from 'src/components/List.jsx'
-import Pokemon from 'src/components/Pokemon.jsx'
+import { SCREENS, URLS } from 'constants.js'
+import BackButton from 'components/BackButton.jsx'
+import BackgroundIcon from 'components/BackgroundIcon.jsx'
+import Regions from 'components/Regions.jsx'
+import List from 'components/List.jsx'
+import Pokemon from 'components/Pokemon.jsx'
+import { screens } from 'styles/screens.module.css'
 
 export default class Screens extends Component {
   constructor(props) {
@@ -45,7 +46,7 @@ export default class Screens extends Component {
 
   render() {
     return (
-      <main className="Screens">
+      <main className={screens}>
         <BackgroundIcon />
         <Regions currentScreen={this.state.screen} handlers={this.state.regionHandlers} />
         <List currentScreen={this.state.screen} onClick={this._displayPokemon} pokemons={this.state.pokemons} />

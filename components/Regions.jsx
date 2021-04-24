@@ -1,4 +1,5 @@
-import { SCREENS } from 'src/constants.js'
+import { SCREENS } from 'constants.js'
+import { regions, translated } from 'styles/regions.module.css'
 
 function Region({ name, count, total, onClick }) {
   return (
@@ -12,7 +13,7 @@ function Region({ name, count, total, onClick }) {
 
 export default function Regions({ currentScreen, handlers }) {
   return (
-    <div className={`Regions ${currentScreen === SCREENS.REGIONS ? '' : 'translated'}`}>
+    <div className={`${regions} ${currentScreen === SCREENS.REGIONS ? '' : translated}`}>
       <Region name="Galar" count="400" total="400" onClick={handlers.galar} />
       <Region name="Isolarmure" count="210" total="210" onClick={handlers.isolarmure} />
       <Region name="Couronneige" count="123" total="210" onClick={handlers.couronneige} />

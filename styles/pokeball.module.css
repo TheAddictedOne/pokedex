@@ -1,0 +1,78 @@
+.pokeball {
+  --size: 250px;
+  --border: 20px;
+
+  bottom: calc(var(--size) / -2);
+  left: calc(50% - var(--size) / 2);
+  position: absolute;
+  z-index: 1;
+}
+
+.pokeball::after {
+  --size: 85%;
+
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  content: '';
+  height: var(--size);
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: var(--size);
+}
+
+.pokeball > div {
+  height: calc(var(--size) / 2);
+  overflow: hidden;
+  position: relative;
+  width: var(--size);
+}
+
+.pokeball > div::before {
+  border: var(--border) solid black;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: calc(var(--size) - var(--border) * 2);
+  position: absolute;
+  width: calc(var(--size) - var(--border) * 2);
+}
+
+.pokeball > div::after {
+  background-color: var(--color-black);
+  content: '';
+  height: 2px;
+  position: absolute;
+  width: 100%;
+}
+
+.pokeball > div:first-child::before {
+  background-color: var(--color-red);
+}
+
+.pokeball > div:first-child::after {
+  bottom: 0;
+}
+
+.pokeball > div:last-child::before {
+  background-color: var(--color-white);
+  bottom: 0;
+}
+
+.pokeball > div:last-child::after {
+  top: 0;
+}
+
+.pokeball > main {
+  --size: 75px;
+
+  background-color: var(--color-white);
+  border: 20px solid var(--color-black);
+  border-radius: 50%;
+  height: var(--size);
+  left: calc(50% - var(--size) / 2);
+  position: absolute;
+  top: calc(50% - var(--size) / 2);
+  width: var(--size);
+  z-index: 1;
+}

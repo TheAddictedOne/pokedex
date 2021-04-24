@@ -1,0 +1,50 @@
+.backgroundicon {
+  --width: 90vw;
+  --height: calc(var(--width) * 2 / 3);
+  --color: rgba(255, 255, 255, 0.3);
+  --thickness: 5vw;
+
+  align-items: center;
+  border: var(--thickness) solid var(--color);
+  border-radius: 40px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  font: 18px monospace;
+  height: var(--height);
+  justify-content: space-around;
+  padding: 10px;
+  position: absolute;
+  transform: rotate(-15deg);
+  width: var(--width);
+}
+
+.backgroundicon::after {
+  bottom: 0;
+  color: var(--color);
+  content: 'v2.0.2';
+  position: absolute;
+  right: 15px;
+}
+
+.backgroundicon > span {
+  --height: var(--thickness);
+
+  background-color: var(--color);
+  border-radius: var(--thickness);
+  height: var(--height);
+  margin-left: calc(var(--thickness) * 2);
+  position: relative;
+  width: 50%;
+}
+
+.backgroundicon > span::before {
+  background-color: var(--color);
+  border-radius: 50%;
+  content: '';
+  height: var(--height);
+  left: calc(var(--thickness) * -2);
+  position: absolute;
+  top: 0;
+  width: var(--height);
+}

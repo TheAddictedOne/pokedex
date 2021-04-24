@@ -1,4 +1,4 @@
-import Corner from 'src/components/Corner.jsx'
+import Corner from 'components/Corner.jsx'
 
 export default function Footer() {
   return (

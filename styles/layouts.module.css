@@ -1,0 +1,23 @@
+.anchor {
+  position: absolute;
+}
+
+.topleft {
+  left: 0;
+  top: 0;
+}
+
+.topright {
+  right: 0;
+  top: 0;
+}
+
+.bottomleft {
+  bottom: 0;
+  left: 0;
+}
+
+.bottomright {
+  bottom: 0;
+  right: 0;
+}
