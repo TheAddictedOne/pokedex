@@ -15,7 +15,8 @@
   "scripts": {
     "start": "next start",
     "dev": "next dev",
-    "build": "next build && next export -o docs"
+    "build": "next build",
+    "export": "next export"
   },
   "devDependencies": {
     "stylelint": "^13.12.0",
