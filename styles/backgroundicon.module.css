@@ -22,7 +22,7 @@
 .backgroundicon::after {
   bottom: 0;
   color: var(--color);
-  content: 'v2.0.2';
+  content: 'v2.2.0';
   position: absolute;
   right: 15px;
 }
