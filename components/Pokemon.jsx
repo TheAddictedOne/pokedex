@@ -8,7 +8,7 @@ function Types({ types }) {
 
   return (
     <div>
-      {types.map((type, i) => <img key={i} src={`/images/types/${type}.png`} />)}
+      {types.map((type, i) => <img key={i} src={`./images/types/${type}.png`} />)}
     </div>
   )
 }
@@ -19,7 +19,7 @@ function Affinities({ affinities }) {
       <section key={key}>
         <h1>{name}</h1>
         <div>
-          {affinities[name].map((type, i) => <img key={i} src={`/images/types/${type}.png`} />)}
+          {affinities[name].map((type, i) => <img key={i} src={`./images/types/${type}.png`} />)}
         </div>
       </section>
     )
@@ -32,7 +32,7 @@ export default function Pokemon({ currentScreen, pokemon }) {
   return (
     <div className={`${pokmon} ${currentScreen === SCREENS.POKEMON ? '' : translated}`}>
       <ListItem numero={pokemon.numero} name={pokemon.name} />
-      <img src={`/images/${pokemon.name}.png`} />
+      <img src={`./images/${pokemon.name}.png`} />
       <main>
         <section>
           <h1>Types</h1>
